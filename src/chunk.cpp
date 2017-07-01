@@ -57,6 +57,24 @@ void Chunk::setPosition(Position position)
 }
 
 /**
+ * Returns the `Voxel` at `position` <b>relative to the chunk's position</b>.
+ *
+ * @param position
+ *          the position of the desired voxel
+ * @return the voxel at the specified position
+ *
+ */
+Voxel Chunk::getVoxelAt(Position position)
+{
+    // extract co-ordinates
+    unsigned long long x = std::get<0>(position);
+    unsigned long long y = std::get<1>(position);
+    unsigned long long z = std::get<2>(position);
+
+    return this->voxels[x][y][z];
+}
+
+/**
  * Performs element-wise addition of `offset` and the position of each voxel.
  * 
  * @param offset
@@ -119,11 +137,11 @@ void Chunk::initVoxelSpace()
         for(unsigned int j=0;j<this->voxels[i].size();j++)
         {
             this->voxels[i][j] = std::vector<Voxel>(this->size);
-/*
+
             for(unsigned int k=0;k<this->voxels[i][j].size();k++)
             {
-                this->voxels[i][j][k] = std::vector<Voxel>(this->size);
-            }*/
+                this->voxels[i][j][k].setPosition(std::make_tuple(x+i, y+j, z+k));
+            }
         }
     }
 

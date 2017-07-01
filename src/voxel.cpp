@@ -18,6 +18,7 @@ Voxel::Voxel(void)
 {
     this->pos = this->DEFAULT_POSITION; // set position
     this->initColours(); // init colours
+    this->solid = true;
 }
 
 /**
@@ -32,6 +33,7 @@ Voxel::Voxel(Position position)
 {
     this->pos = position; // set position
     this->initColours(); // init colours
+    this->solid = true;
 }
 
 void Voxel::initColours(void)
@@ -42,7 +44,6 @@ void Voxel::initColours(void)
     this->colours.push_back(this->DEFAULT_COLOUR);
     this->colours.push_back(this->DEFAULT_COLOUR);
     this->colours.push_back(this->DEFAULT_COLOUR);
-
 }
 
 /**

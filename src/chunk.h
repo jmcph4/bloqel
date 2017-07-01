@@ -26,7 +26,8 @@ class Chunk
         Chunk(Position chunkPos, unsigned int chunkSize);
         Position getPosition(void);
         unsigned int getSize(void);
-        void setPosition(Position pos);
+        void setPosition(Position position);
+        Voxel getVoxelAt(Position position);
     private:
         Position pos; // chunk position
         unsigned int size; // size of chunk

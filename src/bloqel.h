@@ -24,7 +24,19 @@
  */
 
 // Versioning metadata
+
+/**
+ * Major version number.
+ */
 #define BLOQEL_MAJOR_VERSION 0
+
+/**
+ * Minor version number.
+ */
 #define BLOQEL_MINOR_VERSION 0
-#define BLOQEL_REVISION      1
+
+/**
+ * Revision number.
+ */
+#define BLOQEL_REVISION      2
 
